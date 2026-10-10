@@ -5,12 +5,14 @@ import MarketPrices from "@/components/MarketPrices";
 import { getProductBySlug } from "@/lib/api";
 import { formatPrice, formatUnit } from "@/lib/format-price";
 import { getPriceSummary } from "@/lib/products";
+import { requireSession } from "@/lib/session";
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 
   if (!product) notFound();
+  await requireSession();
 
   const summary = getPriceSummary(product);
   const changeLabel = product.change.dir === "up" ? "বেড়েছে" : product.change.dir === "down" ? "কমেছে" : "অপরিবর্তিত রয়েছে";

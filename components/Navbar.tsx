@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logoIcon from "@/logo-icon.png";
 import type { Category } from "@/lib/types";
+import AuthButtons from "@/components/AuthButtons";
 
 export default function Navbar({ categories, date }: { categories: Category[]; date: string }) {
   const pathname = usePathname();
@@ -23,10 +24,7 @@ export default function Navbar({ categories, date }: { categories: Category[]; d
             </span>
           </Link>
 
-          <div className="flex items-center gap-2 text-sm font-semibold">
-            <Link href="/signin" className="rounded-lg border border-line px-3 py-2 transition-colors hover:bg-page sm:px-4">সাইন ইন</Link>
-            <Link href="/signup" className="rounded-lg border border-brand bg-brand px-3 py-2 text-white transition-colors hover:bg-brand-dark sm:px-4">সাইন আপ</Link>
-          </div>
+          <AuthButtons />
         </div>
 
         <nav aria-label="পণ্যের বিভাগ" className="min-h-[49px] overflow-x-auto border-t border-line py-2">

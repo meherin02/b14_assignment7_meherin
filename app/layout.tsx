@@ -5,6 +5,7 @@ import { Hind_Siliguri } from "next/font/google";
 import MarketHeader from "@/components/MarketHeader";
 import HeaderSkeleton from "@/components/HeaderSkeleton";
 import Footer from "@/components/Footer";
+import AuthNotifications from "@/components/AuthNotifications";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="bn" className={hindSiliguri.variable}>
       <body className="flex min-h-screen flex-col">
+        <Suspense fallback={null}><AuthNotifications /></Suspense>
         <Suspense fallback={<HeaderSkeleton />}>
           <MarketHeader />
         </Suspense>
