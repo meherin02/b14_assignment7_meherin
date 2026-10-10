@@ -1,0 +1,35 @@
+export type ProductUnit = "kg" | "litre" | "dozen" | "piece";
+
+export type Category = {
+  id: string;
+  slug: string;
+  nameBn: string;
+  icon: string;
+};
+
+export type MarketPrice = {
+  market: string;
+  division: string;
+  min: number;
+  max: number;
+};
+
+export type Product = {
+  id: number;
+  slug: string;
+  nameBn: string;
+  category: string;
+  categoryNameBn: string;
+  categoryIcon: string;
+  unit: ProductUnit;
+  image: string;
+  today: number;
+  yesterday: number;
+  lastWeek: number;
+  lastMonth: number;
+  change: {
+    dir: "up" | "down" | "flat";
+    pct: number;
+  };
+  markets: MarketPrice[];
+};
