@@ -21,6 +21,9 @@ export function getAuth() {
         schemaName: "bazardor_auth",
       },
       emailAndPassword: { enabled: true, autoSignIn: false, minPasswordLength: 8 },
+      account: {
+        accountLinking: { enabled: true, allowDifferentEmails: true },
+      },
       socialProviders: {
         ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? {
           google: { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET },

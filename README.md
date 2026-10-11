@@ -1,3 +1,55 @@
+# বাজার দর | BazarDor
+
+BazarDor is a Bengali grocery price website. Users can see current product prices, find products by category, and compare prices from different markets.
+
+## Project links
+
+- Live website: To be added after deployment.
+- GitHub repository: To be added before submission.
+
+## Technologies used
+
+- Next.js App Router
+- React and TypeScript
+- Tailwind CSS
+- BetterAuth
+- PostgreSQL database hosted on Supabase
+- Kysely and pg for the database connection
+- React Hot Toast
+
+## Features
+
+1. Home page with today's top price increases, decreases, and all products.
+2. Category pages with sorting by price from low to high or high to low.
+3. Product details with minimum, maximum, average, and market prices.
+4. Email/password registration and login, plus Google and GitHub login.
+5. Protected product details and profile pages.
+6. Profile name updates on a separate page.
+7. Bengali numbers, a scrolling price ticker, and layouts for mobile, tablet, and desktop.
+8. Loading skeletons, error messages, and a custom 404 page.
+
+## Run locally
+
+1. Open a terminal inside this project folder and install the packages:
+
+   ```bash
+   npm install
+   ```
+
+2. Create `.env.local` using the variable names in `.env.example`. Add the PostgreSQL connection URL, BetterAuth secret, and Google/GitHub OAuth credentials. Set `BETTER_AUTH_URL` to `http://localhost:3000`. The database must contain the BetterAuth tables in the `bazardor_auth` schema.
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000).
+
+To create a production build, run `npm run build`. Run `npm start` to serve the completed build.
+
+
+## Original assignment instructions
+
 # 💪 B14-A7-Bazar Dor
 
 ---

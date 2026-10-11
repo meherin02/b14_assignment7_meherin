@@ -10,7 +10,11 @@ export default function LinkSocialAccounts() {
   async function link(provider: "google" | "github") {
     setBusy(provider);
     try {
-      const result = await authClient.linkSocial({ provider, callbackURL: `/profile?linked=${provider}` });
+      const result = await authClient.linkSocial({
+        provider,
+        callbackURL: `/profile?linked=${provider}`,
+        errorCallbackURL: "/profile?linkError=true",
+      });
       if (result.error) toast.error(result.error.message || "অ্যাকাউন্ট সংযুক্ত করা যায়নি।");
     } catch {
       toast.error("সংযোগে সমস্যা হয়েছে। আবার চেষ্টা করুন।");
