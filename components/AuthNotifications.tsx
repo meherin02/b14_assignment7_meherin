@@ -18,6 +18,9 @@ export default function AuthNotifications() {
     if (pathname === "/" && searchParams.get("auth") === "success" && session) {
       toast.success("সাইন ইন সফল হয়েছে।", { id: "social-login" });
     }
+    if (pathname === "/profile" && searchParams.has("linked")) {
+      toast.success("লগইন পদ্ধতিটি আপনার অ্যাকাউন্টে সংযুক্ত হয়েছে।", { id: "social-linked" });
+    }
   }, [pathname, searchParams, session]);
 
   return <Toaster position="top-center" toastOptions={{ duration: 4000 }} />;

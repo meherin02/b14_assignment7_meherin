@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { requireSession } from "@/lib/session";
+import LinkSocialAccounts from "@/components/LinkSocialAccounts";
 
 export default async function ProfilePage() {
   const { user } = await requireSession();
@@ -13,6 +14,7 @@ export default async function ProfilePage() {
           <div><dt className="text-sm text-muted">ইমেইল</dt><dd className="mt-1 break-all">{user.email}</dd></div>
         </dl>
         <Link href="/profile/update" className="mt-8 inline-block rounded-lg bg-brand px-4 py-3 font-semibold text-white hover:bg-brand-dark">তথ্য আপডেট করুন</Link>
+        <LinkSocialAccounts />
       </section>
     </main>
   );
