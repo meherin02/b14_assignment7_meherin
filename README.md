@@ -4,7 +4,7 @@ BazarDor is a Bengali grocery price website. Users can see current product price
 
 ## Project links
 
-- Live website: To be added after deployment.
+- Live website: [BazarDor](https://b14-assignment7-meherin.vercel.app/)
 - GitHub repository: To be added before submission.
 
 ## Technologies used
